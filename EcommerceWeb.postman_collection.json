@@ -1,0 +1,1896 @@
+{
+	"info": {
+		"_postman_id": "52b99391-9bb5-40ab-9732-2ce69c58b151",
+		"name": "EcommerceWeb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28937394"
+	},
+	"item": [
+		{
+			"name": "PermitAll",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"duy123\",\r\n\"password\":\"123456@\",\r\n\"confirmPassword\":\"123456@\",\r\n\"fullname\":\"Ngô Đình Duy\",\r\n\"email\":\"duy123@gmail.com\",\r\n\"phone\":\"0989999888\",\r\n\"address\":\"daklak\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign In",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\":\"admin\",\r\n\"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\" : \"eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzkzNjAwMSwiaWF0IjoxNzEzOTMyNDAxLCJqdGkiOiIwMmY5ZmE2MS1jY2FkLTRjNzgtOTVlMy1jOTI4ZTg4MTIwYmYiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.7JmwLjO6OdiBbzEOsshIvXchyBxMvrEq3IYmAZjEq39vUxQOOOfSkusFaGvQEjO2C-RW0MyyjebHhGdjo-fpbA\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/auth/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTQwMzI4NjAsImlhdCI6MTcxNDAyOTI2MCwianRpIjoiYTk0NWY4ODctNGY5Mi00MTMyLTk3MGUtODk5OTI0MDY0NTkyIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.dD8r35wcOWL32aMph-q1w37VGbf2jAo_Gfmc1CRUqw-F0e4I99iL13P0InKAwAKBXu2J8EQMg20rIxrdZc-TUA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/auth/myInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"auth",
+								"myInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by name or description",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"keyword\" : \"áo sơ mi loại\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get products by categories",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/products/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"products",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by idProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api.myservice.com/v1/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api.myservice.com",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Get All Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NDIyMCwiaWF0IjoxNzEzOTQwNjIwLCJqdGkiOiIyZDEzMzlhNS0yYWM2LTQyZjItYTFiNy1hOTVjYTM3MjUwYmMiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.azM-LBoC7PG3tLdJFbjkvNk15lBiqRqg5kusYItKU5aqzXst7ujDIrm7FY6wGKzPFaMn9Zzv4ZjixM3goO3ipA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Roles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg4NDI1OSwiaWF0IjoxNzEzODgwNjU5LCJqdGkiOiIwMWVmYzZmNy1jNDJkLTRjMTQtYjI3Yy00MmVmYTE4MDU5NDUiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.1lUTaLWaC02IOdWo4t1_VVN-WnXWK6ZI3Efv5JtLWVVMLbXpARlYBTtsm3gKMrd4_xyWFUn_DL0JCw_6lCvWMQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find user by fullname contains",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg4NDI1OSwiaWF0IjoxNzEzODgwNjU5LCJqdGkiOiIwMWVmYzZmNy1jNDJkLTRjMTQtYjI3Yy00MmVmYTE4MDU5NDUiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.1lUTaLWaC02IOdWo4t1_VVN-WnXWK6ZI3Efv5JtLWVVMLbXpARlYBTtsm3gKMrd4_xyWFUn_DL0JCw_6lCvWMQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users/search?search=Duy",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users",
+										"search"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Duy"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg5NDUwNSwiaWF0IjoxNzEzODkwOTA1LCJqdGkiOiI0MTVjZmVmOS1iNjJmLTQwNDQtOWJjNy0xZDRkYjI5MzU3MjUiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.32ZirtpoupDfXF-vSEOpd-m7VIPAoOAap3iONQrfWc37Qb-eJeg4Rk-UAsChYSX8Ve3JNbgbg0cL_W7NmGdRFg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users/3/role/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users",
+										"3",
+										"role",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Role",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTM4NzAzODQsImlhdCI6MTcxMzg2Njc4NCwianRpIjoiZmU5OTRkMWYtNjI0ZS00ZDM0LWE5MTQtY2UzNzE2OTQ3MzBhIiwic2NvcGUiOiIifQ.UzHT9JXYSJuqrNQLWxo5UgS7MkutrvTPVQ2dZmtr_FWqLYhqZRmI53cEVzPGl--6bJGxOKMx8l9ejXL9qHsHZw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"roleName\":\"USER\",\r\n    \"permissions\" : [\"1\"]\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/roles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Permission",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTM4NzAzODQsImlhdCI6MTcxMzg2Njc4NCwianRpIjoiZmU5OTRkMWYtNjI0ZS00ZDM0LWE5MTQtY2UzNzE2OTQ3MzBhIiwic2NvcGUiOiIifQ.UzHT9JXYSJuqrNQLWxo5UgS7MkutrvTPVQ2dZmtr_FWqLYhqZRmI53cEVzPGl--6bJGxOKMx8l9ejXL9qHsHZw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"APPROVE_POST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/permissions",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add permission for users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg5NDUwNSwiaWF0IjoxNzEzODkwOTA1LCJqdGkiOiI0MTVjZmVmOS1iNjJmLTQwNDQtOWJjNy0xZDRkYjI5MzU3MjUiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.32ZirtpoupDfXF-vSEOpd-m7VIPAoOAap3iONQrfWc37Qb-eJeg4Rk-UAsChYSX8Ve3JNbgbg0cL_W7NmGdRFg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users/3/role/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users",
+										"3",
+										"role",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete permission for users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg5NDUwNSwiaWF0IjoxNzEzODkwOTA1LCJqdGkiOiI0MTVjZmVmOS1iNjJmLTQwNDQtOWJjNy0xZDRkYjI5MzU3MjUiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.32ZirtpoupDfXF-vSEOpd-m7VIPAoOAap3iONQrfWc37Qb-eJeg4Rk-UAsChYSX8Ve3JNbgbg0cL_W7NmGdRFg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users/3/role/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users",
+										"3",
+										"role",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change status users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzg4MDIzNSwiaWF0IjoxNzEzODc2NjM1LCJqdGkiOiIzMWFjYjJlNS05ZGRiLTRhYjMtYjU3NC1iZjViOGQ3OWM3NjEiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.fWi3qUpusc-X9CzU_qNTlwNgDBOBa-RjQc48nwrvQHrJoTKmChdGL-r4oSRhKna8y4oHXUMYnYU3NkVg6OOq2w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNDU3NTQ1NywiaWF0IjoxNzE0NTcxODU3LCJqdGkiOiI5MGE4Y2ZiNS05ZjRmLTRlZTQtOTViOS0yODM4MDRiOTU1YTgiLCJzY29wZSI6IlJPTEVfQURNSU4gVklFV19QT1NUIFVQREFURV9QT1NUIERFTEVURV9QT1NUIEFQUFJPVkVfUE9TVCJ9.m-ueXPaoJS6a7195NV4kd6PuICa-aHWCn5lCrY5porZMGodDO4vyHULw2dpkG-0iPGjQkz9d8ZIJngQL3j1_jg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"123456@\",\r\n    \"confirmPassword\":\"123456@\",\r\n    \"roles\" : [\"1\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/add-role-user-for-user/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"add-role-user-for-user",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Upload Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzkzNjk0NywiaWF0IjoxNzEzOTMzMzQ3LCJqdGkiOiI4ODUxYWIxMC00YTAyLTRmYTEtOGM2My01ZGNhYmFkZjI2MzYiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.eviYrl3YZTDJiIFbfDTzhNgFI8s7cTC804ugBqAG3o5TwMjSPC-QjSbSDpQbgCrWcpcWjE55hwEk3s1KoLGvDw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/ngoduy2/Desktop/aolen3.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/file-upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"file-upload"
+									],
+									"query": [
+										{
+											"key": "file",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk3Nzk1NiwiaWF0IjoxNzEzOTc0MzU2LCJqdGkiOiIzYWY3N2UzNS03YWFlLTQ3MGYtYTU2Ny05ZjRhOTc3M2Q1NDgiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.FOTOmmzOQ2lL6fhjhfqxPnC2SPB7sTESz-H45fSDdpu9CtAyU2fmM256uhXVFjwv77PaUlBYmxshpWDUdfbaVg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk1NzEzNSwiaWF0IjoxNzEzOTUzNTM1LCJqdGkiOiIyY2Q5ZDcyOS1hZDg0LTQxMzQtOTZmYi04YmRiYWNhYjIxMDEiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.fGlxZxFRQqAIrqgTThU3vU4vLMVygU49a1xMs4aVGTaLv4rAiVWdo5E_TKI0Q5Fw8Gvx-0BuDSqZ63gSbLRYsg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\":\"Áo sơ mi 2\",\r\n    \"description\":\"áo sơ mi loại 2\",\r\n    \"unitPrice\":99.000,\r\n    \"image\":\"\",\r\n    \"categoryId\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Load Image",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NTA0NiwiaWF0IjoxNzEzOTQxNDQ2LCJqdGkiOiJlMzBkZDZiZC0yNmYwLTQ2YWUtYmNkMy1hMDA3YjZjMWJjNGIiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.63vtBq_EkTxyaYFZ13wiZdVRStu5gtioiCHJSMDAtkAhPeMJiBFKVBtPPe_THZxgsplypaCJKHkLmDsieAu49w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/file-upload/file/15e904ad33144bfe8ece9cb05f46bd31.jpg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"file-upload",
+										"file",
+										"15e904ad33144bfe8ece9cb05f46bd31.jpg"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Upload Files",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NTA0NiwiaWF0IjoxNzEzOTQxNDQ2LCJqdGkiOiJlMzBkZDZiZC0yNmYwLTQ2YWUtYmNkMy1hMDA3YjZjMWJjNGIiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.63vtBq_EkTxyaYFZ13wiZdVRStu5gtioiCHJSMDAtkAhPeMJiBFKVBtPPe_THZxgsplypaCJKHkLmDsieAu49w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/file-upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"file-upload"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Product",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NDIyMCwiaWF0IjoxNzEzOTQwNjIwLCJqdGkiOiIyZDEzMzlhNS0yYWM2LTQyZjItYTFiNy1hOTVjYTM3MjUwYmMiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.azM-LBoC7PG3tLdJFbjkvNk15lBiqRqg5kusYItKU5aqzXst7ujDIrm7FY6wGKzPFaMn9Zzv4ZjixM3goO3ipA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\":\"Áo len 1\",\r\n    \"description\":\"description1\",\r\n    \"unitPrice\":123.000,\r\n    \"image\":\"be9b43244ffb445987a4b04591f35f47.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product by ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NDIyMCwiaWF0IjoxNzEzOTQwNjIwLCJqdGkiOiIyZDEzMzlhNS0yYWM2LTQyZjItYTFiNy1hOTVjYTM3MjUwYmMiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.azM-LBoC7PG3tLdJFbjkvNk15lBiqRqg5kusYItKU5aqzXst7ujDIrm7FY6wGKzPFaMn9Zzv4ZjixM3goO3ipA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/products/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Get Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NTA0NiwiaWF0IjoxNzEzOTQxNDQ2LCJqdGkiOiJlMzBkZDZiZC0yNmYwLTQ2YWUtYmNkMy1hMDA3YjZjMWJjNGIiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.63vtBq_EkTxyaYFZ13wiZdVRStu5gtioiCHJSMDAtkAhPeMJiBFKVBtPPe_THZxgsplypaCJKHkLmDsieAu49w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk1NzEzNSwiaWF0IjoxNzEzOTUzNTM1LCJqdGkiOiIyY2Q5ZDcyOS1hZDg0LTQxMzQtOTZmYi04YmRiYWNhYjIxMDEiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.fGlxZxFRQqAIrqgTThU3vU4vLMVygU49a1xMs4aVGTaLv4rAiVWdo5E_TKI0Q5Fw8Gvx-0BuDSqZ63gSbLRYsg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\" : \"Áo sơ mi\",\r\n    \"description\" : \"Áo sơ mi các loại\",\r\n    \"status\" : 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Category",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0ODgyMCwiaWF0IjoxNzEzOTQ1MjIwLCJqdGkiOiI1Njk0MDliYS1hZDRkLTRhNTUtYjIwYS03ZGVkZGVjOTk0NWEiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.dgVOIvLxnL-joNk1iVgkRNuvl9dKgdXAYMHGncFwTp5H7GDHJ1rvDGhEQfSxCa1Xg_T-KzmGiLQT-wVgnlmqvA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryName\" : \"Áo len\",\r\n    \"description\" : \"Áo len các loại, đã update\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/category/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Category by ID",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxMzk0NTA0NiwiaWF0IjoxNzEzOTQxNDQ2LCJqdGkiOiJlMzBkZDZiZC0yNmYwLTQ2YWUtYmNkMy1hMDA3YjZjMWJjNGIiLCJzY29wZSI6IlJPTEVfQURNSU4gREVMRVRFX1BPU1QgQVBQUk9WRV9QT1NUIENSRUFURV9QT1NUIn0.63vtBq_EkTxyaYFZ13wiZdVRStu5gtioiCHJSMDAtkAhPeMJiBFKVBtPPe_THZxgsplypaCJKHkLmDsieAu49w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/category/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"item": [
+						{
+							"name": "Get List Order",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order by status",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get order by id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Change status order",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJhZG1pbiIsImV4cCI6MTcxNDU3ODM2MiwiaWF0IjoxNzE0NTc0NzYyLCJqdGkiOiI0ODViMWRiNC0wM2M4LTQ2MjEtYjUyYy0zMGExMmZiOWJjYzMiLCJzY29wZSI6IlJPTEVfQURNSU4gVklFV19QT1NUIFVQREFURV9QT1NUIERFTEVURV9QT1NUIEFQUFJPVkVfUE9TVCJ9.vgdtUB_9E3Wi9dlaJjOs_C81HtU9dzW2o8J0eQMfdIEKvivfYBsW3Rh-x32m95YWZgVFf-gdNIVsdymQ3SPSqg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\" : \"CONFIRM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/admin/orders/2/status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"admin",
+										"orders",
+										"2",
+										"status"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dashboard",
+					"item": [
+						{
+							"name": "Revenue from to",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Shopping cart",
+					"item": [
+						{
+							"name": "Add new shopping cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTM5ODE0NzgsImlhdCI6MTcxMzk3Nzg3OCwianRpIjoiYjg1YTkyOWMtY2NmNC00MGExLTllZjAtN2E5YmFkY2U5ZTM1Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.UYOu9w9KMvb6Nh_YPfxYwOoTG5iL5h5qzAz1rAfEUpSijDUG5I0QeC0nPUuCnEVwbJw6z-vFPvlrtLtQPog30w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add item into shopping cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwMzAyMjMsImlhdCI6MTcxNDAyNjYyMywianRpIjoiODg3MjI4MmQtY2VkYy00MmZmLTliNDYtZGNlN2U4YzRiYjRmIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.k_j2D0hHw4AFi831sMLSWo4-XAh97B_Y6iLUaBueEfHj08E58TGU7T423MywNODlBmQywzd-H9IlaJRQBga6qQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\" : 4,\r\n    \"orderQuantity\" : 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2/add-item",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2",
+										"add-item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user's shopping cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwMzMzOTEsImlhdCI6MTcxNDAyOTc5MSwianRpIjoiNjE0MGU5MzQtMGJlYS00MzI3LWJjMDEtZjc3NTYyZjJkOTc0Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.fELawuPsPTovK5wKSWcDg-xazEj1aO45bo-83bmViJKrvzC5sW4eLbAriTNLOVC9-bfX2zAhMB7JaQDFNh2y2A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update order quantity",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwMzMzOTEsImlhdCI6MTcxNDAyOTc5MSwianRpIjoiNjE0MGU5MzQtMGJlYS00MzI3LWJjMDEtZjc3NTYyZjJkOTc0Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.fELawuPsPTovK5wKSWcDg-xazEj1aO45bo-83bmViJKrvzC5sW4eLbAriTNLOVC9-bfX2zAhMB7JaQDFNh2y2A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderQuantity\" : 22\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2/update-item/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2",
+										"update-item",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete 1 item of shopping cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwMzMzOTEsImlhdCI6MTcxNDAyOTc5MSwianRpIjoiNjE0MGU5MzQtMGJlYS00MzI3LWJjMDEtZjc3NTYyZjJkOTc0Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.fELawuPsPTovK5wKSWcDg-xazEj1aO45bo-83bmViJKrvzC5sW4eLbAriTNLOVC9-bfX2zAhMB7JaQDFNh2y2A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2/delete-item/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2",
+										"delete-item",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete all item of shopping cart",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwMzMzOTEsImlhdCI6MTcxNDAyOTc5MSwianRpIjoiNjE0MGU5MzQtMGJlYS00MzI3LWJjMDEtZjc3NTYyZjJkOTc0Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.fELawuPsPTovK5wKSWcDg-xazEj1aO45bo-83bmViJKrvzC5sW4eLbAriTNLOVC9-bfX2zAhMB7JaQDFNh2y2A",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2/delete-all-items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2",
+										"delete-all-items"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check out",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwNzAwMDIsImlhdCI6MTcxNDA2NjQwMiwianRpIjoiYTFkYzA0OTUtMjRmNi00ZTE0LWJjOTEtOTAyNjlhMTgxMjM5Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.sk2srUoguuetRmTKkwfM8SInwYxVVYgnC8pb7CZvL7pjv0lUykrUpEvsuN1rFoKnDaGkuh3aIyj8sEuC-lwOvA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"addressId\" : 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/shopping-cart/2/checkout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"shopping-cart",
+										"2",
+										"checkout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Recipient Address",
+					"item": [
+						{
+							"name": "Add new recipient address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwNjIzNDYsImlhdCI6MTcxNDA1ODc0NiwianRpIjoiYzcyNTcwNWUtMWVmNy00NDVhLWI4ZjktYzQ4NDg3YzA2YzRkIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.9l3t8_H-g4hUPqahIvlsFQGIbTauV02IJ87ADyUnCs7DOfPU46TvVNP3ohiJThIpiJuZ-8sMDMcuuE5Hjnhn4Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullAddress\" : \"QL50, Binh Chanh, TP.HCM\",\r\n    \"phone\" : \"0983245632\",\r\n    \"receiveName\": \" Nguoi nhan thu 1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/account/address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"account",
+										"address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get recipient address",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update recipient address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwNjI5MzYsImlhdCI6MTcxNDA1OTMzNiwianRpIjoiYWNmZDE5YmYtOGU3NC00ZjE4LTgyMWMtMDNiYzM4YjFkNzZlIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.bsbgReZBaUcHW3uHPUJeqXaE3krREEyAf5O9RGHu_tZzAwxpYs95yZ64eUlzaj1LygZvE614LatG3zPa1G73LQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullAddress\" : \"QL50, Binh Chanh, TP.HCM\",\r\n    \"phone\" : \"0983245632\",\r\n    \"receiveName\": \" Nguoi nhan thu 1 da sua\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/account/address/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"account",
+										"address",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete recipient address",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQwNjI5MzYsImlhdCI6MTcxNDA1OTMzNiwianRpIjoiYWNmZDE5YmYtOGU3NC00ZjE4LTgyMWMtMDNiYzM4YjFkNzZlIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.bsbgReZBaUcHW3uHPUJeqXaE3krREEyAf5O9RGHu_tZzAwxpYs95yZ64eUlzaj1LygZvE614LatG3zPa1G73LQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/account/address/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"account",
+										"address",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find recipient address by id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Get account info",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Edit account info",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQyMTI5NjQsImlhdCI6MTcxNDIwOTM2NCwianRpIjoiMjM3MWY4OTEtN2E0MS00MjVkLTk3ZmEtMGU4Zjk5YjcyYzkzIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.XFy3jSDWs84rdBRper2iJR_dC0I8f7Yd3a7JXWj_9g6jYQmpxcl16MAE3k2PageX2jEEMQYmOpJcM0ET2YRX6Q",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "fullname",
+											"value": "Ngô Đình Duy",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0323632525",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Địa chỉ thứ 1",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/C:/Users/ngoduy2/Desktop/aolen3.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTQyMTY2NDIsImlhdCI6MTcxNDIxMzA0MiwianRpIjoiOWVhZTU3NTEtYzY4MC00OWVhLTg5ZGQtMWQyYzFhMGE3YTI3Iiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.GzREGGto_RumCMfFrr2xZbjbOiCxRw-VRCCz76KhWur7ZttpGQXjUsgd2EO-HS3_f0c0LcZEf4ZkZH1rcdhDBg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"oldPassword\" : \"123456@\",\r\n    \"newPassword\" : \"123456\",\r\n    \"confirmPassword\":\"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/account/change-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"account",
+										"change-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "Get order history",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get order history by serial number",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTQzMjM5MjcsImlhdCI6MTcxNDMyMDMyNywianRpIjoiYTA4NzMyMDYtNzUyOS00ZTIwLThkODgtZGExNGE4ZDAxOTNhIiwic2NvcGUiOiJST0xFX1VTRVIgVklFV19QT1NUIn0.pPewszGADL9OamudGK3BLxKlLc7EJNbRF1BWcGHcnKG2cRco2plbLuiMfyNY69DZafTFPXnrKrvGI5YwBvyumQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/history/searchBySerialNumber?serialNumber=7bbef0b5-9417-4d58-8c82-9a084a4f8d62",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"history",
+										"searchBySerialNumber"
+									],
+									"query": [
+										{
+											"key": "serialNumber",
+											"value": "7bbef0b5-9417-4d58-8c82-9a084a4f8d62"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get order by status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTQzMTk5ODYsImlhdCI6MTcxNDMxNjM4NiwianRpIjoiY2NjZTZkNjAtMzlhYi00ZTRkLThkNmMtZjVlZTIyMGM5MTAxIiwic2NvcGUiOiJST0xFX1VTRVIgVklFV19QT1NUIn0.Y1m43yQJ6swPBnnu_BYU_iKfwYf6PWMF8OeFl_nBXo5270csJUcJEuqObdw-0VGOUjpHjKo-d1Oazm_Hvztdkw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/history/searchByOrderStatus?key=WAITING",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"history",
+										"searchByOrderStatus"
+									],
+									"query": [
+										{
+											"key": "key",
+											"value": "WAITING"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/history/2/cancel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"history",
+										"2",
+										"cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Wishlist",
+					"item": [
+						{
+							"name": "Create wishlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTQ0MDE4MTgsImlhdCI6MTcxNDM5ODIxOCwianRpIjoiZjkyOWQ5OTAtYTAzMi00OTMxLTg4NWQtYWZhYmJmM2JlMTIwIiwic2NvcGUiOiJST0xFX1VTRVIgVklFV19QT1NUIn0.zvEDVhKWxbCI8BLaGXv-lRGXCnkQ7Fri8bCsERIJjLjokQCzZnxuMPuEnhiKy3BUq_NQNJtlsGcaUz2ncljx-w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/wishlist",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add item into wishlist",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Detele item from wishlist",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMjMiLCJleHAiOjE3MTQ0MDE4MTgsImlhdCI6MTcxNDM5ODIxOCwianRpIjoiZjkyOWQ5OTAtYTAzMi00OTMxLTg4NWQtYWZhYmJmM2JlMTIwIiwic2NvcGUiOiJST0xFX1VTRVIgVklFV19QT1NUIn0.zvEDVhKWxbCI8BLaGXv-lRGXCnkQ7Fri8bCsERIJjLjokQCzZnxuMPuEnhiKy3BUq_NQNJtlsGcaUz2ncljx-w",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\" : 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api.myservice.com/v1/user/wishlist/2/deleteItem",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api.myservice.com",
+										"v1",
+										"user",
+										"wishlist",
+										"2",
+										"deleteItem"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get wishlist",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Update Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkZXZ0ZXJpYS5jb20iLCJzdWIiOiJkdXkxMTEiLCJleHAiOjE3MTM4Nzc5NjIsImlhdCI6MTcxMzg3NDM2MiwianRpIjoiOTRiMmIyZjctMDg0Zi00NzI3LWJlODgtZjQwZmM4NWNlOWRkIiwic2NvcGUiOiJST0xFX1VTRVIgQ1JFQVRFX1BPU1QifQ.1V9v4J_w0XpFzsOgT3bDwdYASHsdbkvQifLOqUgAifFEB4J_QzkttnSaUd6djcQgMz-AG2F_GA1J4Y3TXLUNiQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"admin\",\r\n    \"confirmPassword\":\"admin\",\r\n    \"fullname\":\"admin\",\r\n    \"email\":\"admin@gmail.com\",\r\n    \"phone\":\"0989999888\",\r\n    \"address\":\"nowhere\",\r\n    \"roles\" : [\"1\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api.myservice.com/v1/users/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api.myservice.com",
+						"v1",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
